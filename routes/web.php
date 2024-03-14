@@ -17,5 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mypost', [Mycontroller::class, 'index']);
-Route::get('/aboutus', [Mycontroller::class, 'aboutUs']);
+Route::prefix('blog')->group(function () {
+    Route::get('/mypost/{id?}', [Mycontroller::class, 'index'])->name('home');
+    Route::get('/aboutus/{id?}', [Mycontroller::class, 'aboutUs'])->name('user.aboutUs');
+    Route::get('/contact/{id?}', [Mycontroller::class, 'contactus'])->name('user.contactUs');
+})->whereNumber('id');
+
