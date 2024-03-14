@@ -1,2 +1,0 @@
-<?php echo $__env->make('templates.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php /**PATH D:\Parth\myapp\resources\views/templates/header.blade.php ENDPATH**/ ?>
